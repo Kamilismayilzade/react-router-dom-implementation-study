@@ -20,16 +20,24 @@ function App() {
     <Routes>
 
         <Route path='/' element={ <Home /> } />
-        <Route path='/note' element={ <Note /> } />
+        {/* <Route path='/note' element={ <Note /> } /> */}
         <Route path='/notelist' element={ <NoteList /> } />
         <Route path='/about' element={ <About /> } />
         <Route path='/contact' element={ <Contact /> } />
         <Route path='/notfound' element={ <NotFound /> } />
 
-        <Route path='/note/:id' element={ <Note /> } />
-        <Route path='/note/new' element={ <NewNote /> } />
+        {/* <Route path='/note/:id' element={ <Note /> } />
+        <Route path='/note/new' element={ <NewNote /> } /> */}
 
         <Route path='*' element={ <NotFound /> } />
+
+        <Route path='/note'>
+
+          <Route index element={ <NoteList /> } /> 
+          <Route path=':id' element={ <Note /> } />
+          <Route path='new' element={ <NewNote /> } />
+
+        </Route>
 
     </Routes>
     
