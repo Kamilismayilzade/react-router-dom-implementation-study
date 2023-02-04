@@ -7,6 +7,7 @@ import Home from './components/Home'
 import Navbar from './components/Navbar'
 import NewNote from './components/NewNote'
 import Note from './components/Note'
+import NoteLayout from './components/NoteLayout'
 import NoteList from './components/NoteList'
 import NotFound from './components/NotFound'
 
@@ -14,6 +15,10 @@ function App() {
 
   return (
     <>
+
+    <Routes>
+      <Route path='/note' element={ <h1>Extra content</h1> } />
+    </Routes>
 
     <Navbar />
 
@@ -31,7 +36,7 @@ function App() {
 
         <Route path='*' element={ <NotFound /> } />
 
-        <Route path='/note'>
+        <Route path='/note' element= {<NoteLayout />}>
 
           <Route index element={ <NoteList /> } /> 
           <Route path=':id' element={ <Note /> } />
