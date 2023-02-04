@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useRoutes } from 'react-router-dom'
 import './App.css'
 import About from './components/About'
 import Contact from './components/Contact'
@@ -13,6 +13,30 @@ import NotFound from './components/NotFound'
 
 function App() {
 
+  let element = useRoutes([
+
+    { 
+      path: '/',
+      element: <Navbar />,
+      children: [
+
+        {
+          index: true,
+          element: <Home />,
+        },
+
+        {
+          path: 'anout',
+          element: <Home />,
+        }
+
+      ]
+
+    }
+
+  ])
+
+
   return (
     <>
 
@@ -21,6 +45,8 @@ function App() {
     </Routes>
 
     <Navbar />
+
+    {element}
 
     <Routes>
 
