@@ -12,8 +12,8 @@ const NoteLayout = () => {
         <br />
         <Link to='/note/new'> New Note </Link>
         <br />
-        
-        <Outlet />
+
+        <Outlet context={{hello: 'World'}} />
 
     </>
   )
