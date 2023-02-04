@@ -1,7 +1,11 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 
 const Navbar = () => {
+
+  const location = useLocation();
+  console.log(location)
+
 
   return (
 
@@ -26,10 +30,14 @@ const Navbar = () => {
             } } /> */}
 
             <NavLink end to='/note' ></NavLink>
+            <NavLink to='/' state = 'Hi'>Home</NavLink> 
 
         </ul>
 
+        {location.state}
+
     </nav>
+
 
   )
 }
